@@ -1,0 +1,12 @@
+source venv/bin/activate
+python manage.py startapp
+python3 manage.py createsuperuser
+python3 manage.py runserver
+python3 manage.py makemigrations
+python3 manage.py migrate
+django-admin makemessages -l ru
+django-admin compilemessages -l ru
+python manage.py makemessages -l ru
+python manage.py compilemessages -l ru
+
+celery -A NewsFinal worker -l INFO

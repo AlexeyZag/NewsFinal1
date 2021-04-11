@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -168,9 +169,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 SITE_ID = 1
 AUTH_USER_MODEL = 'users.CustomUser'
 MEDIA_URL = '/media/'
@@ -182,3 +182,4 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
+django_heroku.settings(locals())

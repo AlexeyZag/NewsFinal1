@@ -9,4 +9,6 @@ django-admin compilemessages -l ru
 python manage.py makemessages -l ru
 python manage.py compilemessages -l ru
 
+pip freeze > requirements.txt
+
 celery -A NewsFinal worker -l INFO

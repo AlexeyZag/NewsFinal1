@@ -10,5 +10,6 @@ python manage.py makemessages -l ru
 python manage.py compilemessages -l ru
 
 pip freeze > requirements.txt
+python3 manage.py collectstatic
 
 celery -A NewsFinal worker -l INFO

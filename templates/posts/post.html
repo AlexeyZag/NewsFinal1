@@ -38,6 +38,7 @@ Post
     </form>
 
 {% for i in images %}
+{{ i.image.url }}
 <img class="" src="{{ i.image.url }}" alt="" style="width:600px;height:600px;">
 
 {% endfor %}
@@ -102,48 +103,13 @@ Post
             <div class="row">
               <div class="col-lg-6">
                 <ul class="list-unstyled mb-0">
+                    {% for tag in all_tags %}
                   <li>
-                    <a href="{% url 'taglist' all_tags.0.id %}">{{ all_tags.0 }}</a>
+                    <a href="{% url 'taglist' tag.id %}">{{ tag }}</a>
                   </li>
-                  <li>
-                    <a href="{% url 'taglist' all_tags.1.id %}">{{ all_tags.1 }}</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'taglist' all_tags.2.id %}">{{ all_tags.2 }}</a>
-                  </li>
+                    {% endfor %}
                 </ul>
               </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="{% url 'taglist' all_tags.3.id %}">{{ all_tags.3 }}</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'taglist' all_tags.4.id %}">{{ all_tags.4 }}</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'taglist' all_tags.5.id %}">{{ all_tags.5 }}</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="{% url 'taglist' all_tags.6.id %}">{{ all_tags.6 }}</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'taglist' all_tags.7.id %}">{{ all_tags.7 }}</a>
-                  </li>
-                  <li>
-                    <a href="{% url 'taglist' all_tags.8.id %}">{{ all_tags.8 }}</a>
-                  </li>
-                </ul>
-              </div>
-              <div class="col-lg-6">
-                <ul class="list-unstyled mb-0">
-                  <li>
-                    <a href="{% url 'taglist' all_tags.9.id %}">{{ all_tags.9 }}</a>
-                  </li>
                 </ul>
               </div>
             </div>

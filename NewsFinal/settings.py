@@ -146,7 +146,6 @@ EMAIL_HOST_PASSWORD = 'Djangomail.156' # пароль от почты
 EMAIL_USE_SSL = True # Яндекс использует ssl, подробнее о том, что это, почитайте на Википедии, но включать его здесь обязательно
 ADMINS = [
     ('alex8.8', 'alex8.8@mail.ru'),
-    ('tu_raeva', 'tu_raeva@mail.ru')
     # список всех админов в формате ('имя', 'их почта')
 ]
 SERVER_EMAIL = 'zagaalexey@yandex.ru'
@@ -173,6 +172,9 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATICFILES_STORAGE = 'NewsFinal.storage.WhiteNoiseStaticFilesStorage'
+
 SITE_ID = 1
 AUTH_USER_MODEL = 'users.CustomUser'
 MEDIA_URL = '/media/'
